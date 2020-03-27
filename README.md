@@ -23,6 +23,10 @@ adresinde bulunan token degeridir.
 
 Eğer POSTMAN kullanarak tüm kitapları getirmek istersem 
 
+
+
+
+
 http//localhost:8080/api/v1/tokenbilgisi/book yazıp GET istegi ile kayıtlı tüm kitapları görebilirsiniz.
 
 Aynı şekilde kayıtlı kullanıcıları görebilmek için 
@@ -40,3 +44,12 @@ NOT : Projede mail doğrulamakta mümkündür. Eğer kayıt olurken mail adresin
 http://localhost:8080/confirm?token=tokeniniz 
 
 Linke tıkladıgınız anda metot tetiklenerek verification degerinizi true yapacaktır.
+
+
+localhost:8080/users ve localhost:8080/books sayfalarının görünümleri aşağıdadır. Default olarak projede hiç bir kitap eklenmesi yapılmamıştır.
+
+![alt text](https://github.com/firatkaya1/Spring-Boot-Simple-Web-Application/blob/master/src/main/resources/img/resim3.png)
+
+
+![alt text](https://github.com/firatkaya1/Spring-Boot-Simple-Web-Application/blob/master/src/main/resources/img/resim4.png)
+
