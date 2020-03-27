@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+        <title>Main Page</title>
+    </head>
+    <body>
+        
+         <div class="container resize mx-auto ">
+        <div class="modal-content mt-4 " >
+            <div class="modal-header ">
+                <h1 class="modal-title">Welcome [[${#httpServletRequest.remoteUser}]]</h1>
+            </div>
+                <div class="modal-body" >
+                    <table class="table table-dark">
+						  <thead>
+						    <tr>
+						      <th scope="col">Id</th>
+						      <th scope="col">Email</th>
+						      <th scope="col">Password</th>
+						      <th scope="col">Verification</th>
+						      <th scope="col">Role</th>
+						      <th scope="col">Token</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr th:each ="user : ${users}">
+						      <td th:text="${user.id}"></td>
+						      <td th:text="${user.username}"></td>
+						      <td th:text="${user.password}"></td>
+						      <td th:text="${user.verification}"></td>
+						      <td th:text="${user.role}"></td>
+						      <td th:text="${user.token}"></td>
+						    </tr>
+						  </tbody>
+						</table>
+                </div>
+                <div class="modal-footer ">
+                
+                
+                <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <form th:action="@{/users}" method="post">
+                    <input type="submit" class="btn btn-primary " value="Kullanıcı Kayıtlarını Görüntüle"/>
+                 </form>
+				</div>
+                <div sec:authorize="hasRole('ROLE_ADMIN')">
+                <form th:action="@{/books}" method="post">
+                    <input type="submit" class="btn btn-primary " value="Kitap Kayıtlarını Görüntüle"/>
+                 </form>
+				</div>
+      
+                	
+                <form th:action="@{/logout}" method="post">
+                	<input type="submit" class="btn btn-primary " value="Çıkış yap"/>
+                </form>
+                </div>
+       		 </div>
+    	</div>
+       
+    </body>
+</html>

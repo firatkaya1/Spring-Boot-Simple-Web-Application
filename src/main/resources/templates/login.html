@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+   <title>Spring Security Example </title>
+   <style type="text/css">
+	   .resize {
+	    height: 25px;
+	    width: 50%;
+	}
+	
+	.resize-form {
+	    width: 50%;
+	}
+	
+	@media only screen and (max-width: 600px) {
+	    .resize {
+	        height: auto;
+	        width: 100%;
+	    }
+	    .resize-form {
+	        width: 100%;
+	    }
+	}
+   </style>
+    </head>
+    <body>
+        	
+   <div class="container resize mx-auto">
+        <div class="modal-content mt-4">
+            <div class="modal-header">
+                <h5 class="modal-title">Hoşgeldiniz</h5>
+            </div>
+            <form th:action="@{/login}" method="post" >
+            <div class="modal-body">
+                <p>Lütfen email adresinizi ve şifrenizi giriniz.</p>
+                <div class="form-group resize-form">
+                    <label class="text-danger" for="username">Email Adresiniz</label>
+                    <input type="email" name="username" class="form-control" id="username">
+                </div>
+                <div class="form-group resize-form">
+                    <label class="text-danger" for="password">Şifreniz</label>
+                    <input type="password" name="password" class="form-control" id="password">
+                </div>
+                 <div class="form-group resize-form">
+                     <p><a th:href="@{/register}">Kayıt olmak için tıkla.</a></p>
+                </div> 
+            </div>
+            <div class="modal-footer">
+                <input type="submit" value="Gönder" class="btn btn-primary"/>
+            </div>
+            </form>
+        </div>
+    </div>	
+        
+        
+        
+        
+        
+        
+    </body>
+</html>

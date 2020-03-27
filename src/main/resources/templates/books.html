@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+        <title>All Books</title>
+    </head>
+    <body>
+        
+         <div class="container resize mx-auto ">
+        <div class="modal-content mt-4 " >
+            <div class="modal-header ">
+                <h1 class="modal-title">All Books </h1>
+            </div>
+                <div class="modal-body" >
+                    <table class="table table-dark">
+						  <thead>
+						    <tr>
+						      <th scope="col">Book Id</th>
+						      <th scope="col">Book Price</th>
+						      <th scope="col">Book Name</th>
+						      <th scope="col">Book Owner</th>
+						      <th scope="col">Publisher</th>
+						      <th scope="col">Page</th>
+						      <th scope="col">Number</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr th:each ="book : ${books}">
+						      <td th:text="${book.bookId}"></td>
+						      <td th:text="${book.bookprice}"></td>
+						      <td th:text="${book.bookname}"></td>
+						      <td th:text="${book.bookowner}"></td>
+						      <td th:text="${book.publisher}"></td>
+						      <td th:text="${book.page}"></td>
+						      <td th:text="${book.number}"></td>
+						    </tr>
+						  </tbody>
+						</table>
+                </div>
+                <div class="modal-footer ">
+                
+                	<form th:action="@{/main}" method="get">
+                    	<input type="submit" class="btn btn-primary " value="Geri Dön"/>
+                    </form>
+                    <form th:action="@{/logout}" method="post">
+                    <input type="submit" class="btn btn-primary " value="Çıkış yap"/>
+                    </form>
+                </div>
+       		 </div>
+    	</div>
+       
+    </body>
+</html>

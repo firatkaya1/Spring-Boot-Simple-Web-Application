@@ -1,0 +1,44 @@
+	DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS books;
+DROP TABLE IF EXISTS loghistory; 
+
+CREATE TABLE users (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  username VARCHAR(250) NOT NULL,
+  password VARCHAR(250) NOT NULL,
+  verification VARCHAR(250) DEFAULT NULL,
+  role VARCHAR(250) DEFAULT NULL,
+  token VARCHAR(250) DEFAULT NULL
+  
+ );
+ INSERT INTO users VALUES (1,'admin@admin.com','12345','true','ROLE_ADMIN','02622c3a-5fd4-45d4-968e-9f3f53080b00'); 
+ 
+ CREATE TABLE books (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  bookprice VARCHAR(250) DEFAULT NULL,
+  bookname VARCHAR(250) DEFAULT NULL,
+  bookowner VARCHAR(250) DEFAULT NULL,
+  publisher VARCHAR(250) DEFAULT NULL,
+  page VARCHAR(250) DEFAULT NULL,
+  number VARCHAR(250) DEFAULT NULL
+  
+ );
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
